@@ -1,0 +1,19 @@
+.navbar-color{
+    background-color: #EECAD5;
+    color: rgb(39, 1, 54);
+    height:10%; 
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+}
+
+.navbar-color .nav-link, .navbar-brand {
+    color: #77214c; 
+}
+
+.navbar-color .nav-link:hover {
+    color: #d4388b; 
+}
+
+.logo-navbar{
+    width: 200px;
+}

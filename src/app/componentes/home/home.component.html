@@ -1,0 +1,39 @@
+<div class="contenedor-home">
+    <h1>Componente Home</h1>
+   
+    <div class="grid-container">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">"Ahorcado"</h5>
+                <img src="../../../assets/gif/gif-ahorcado.gif" alt="gif animado de guillotina">
+                <p class="card-text">El juego "Ahorcado" es un juego de palabras en el que un jugador debe adivinar una palabra secreta letra por letra. Cada vez que el jugador sugiere una letra incorrecta, se dibuja una parte del cuerpo en una horca, empezando por la cabeza y continuando con el torso, brazos y piernas. El objetivo es adivinar la palabra completa antes de que se termine de dibujar la figura del ahorcado. <br> Ganas si logras completar la palabra antes de que se complete el dibujo. <br>Pierdes si la imagen del ahorcado se forma por completo antes de adivinar la palabra.</p>
+                <a [routerLink]="['ahorcado']" class="btn btn-primary">Ir al juego</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">"Preguntados: especial 'Rick and Morty'"</h5>
+                <img src="../../../assets/gif/gif-quiz.gif" alt="gif animado de ruleta de preguntas">
+                <p class="card-text">La "Trivia de Preguntas" es un juego en el que los jugadores responden preguntas relacionadas exclusivamente con la serie de televisión Rick and Morty. Las preguntas abarcan personajes, episodios, tramas y detalles específicos del show. Cada respuesta correcta otorga puntos, mientras que las respuestas incorrectas no suman. <br>En la trivia de preguntas, gana quien logre acumular la mayor cantidad de puntos al final del juego, demostrando tu conocimiento profundo sobre la serie.</p>
+                <a [routerLink]="['preguntados']" class="btn btn-primary">Ir al juego</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">"Mayor o menor"</h5>
+                <img src="../../../assets/gif/gif-cartas.gif" alt="gif animado de cartas">
+                <p class="card-text">"Mayor o Menor" es un juego de cartas en el que los jugadores deben adivinar si la próxima carta revelada será mayor o menor que la carta actual. Se juega con un mazo de cartas estándar, y en cada turno, el jugador elige "mayor" o "menor" para la siguiente carta. Si la predicción es correcta, el jugador continúa jugando; si es incorrecta, el turno termina. Ganas al acumular la mayor cantidad de aciertos consecutivos antes de cometer un error. Pierdes si fallas en tu predicción y no aciertas el resultado de la carta siguiente, terminando tu racha de aciertos.</p>
+                <a [routerLink]="['mayor-menor']" class="btn btn-primary">Ir al juego</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">"Simón dice"</h5>
+                <img src="../../../assets/gif/gif-colores.gif" alt="gif animado de guillotina">
+                <p class="card-text">"Simon Dice" es un juego de memoria en el que los jugadores deben seguir una secuencia de colores mostrada por el dispositivo o el jugador principal, conocido como "Simón". La secuencia de colores se presenta en un orden específico, y los jugadores deben reproducirla en el mismo orden. La secuencia se vuelve más larga a medida que el juego avanza. Ganas si reproduces correctamente la secuencia de colores en cada ronda, superando la secuencia creciente. Pierdes si cometes un error en la secuencia: seleccionando un color incorrecto o fallando en el orden.</p>
+                <a [routerLink]="['simon-dice']" class="btn btn-primary">Ir al juego</a>
+            </div>
+        </div>
+        
+    </div>
+  </div>

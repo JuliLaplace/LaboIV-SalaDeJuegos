@@ -1,0 +1,22 @@
+.form-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    min-height: 85vh;
+}
+
+.contenedor-botones{
+    display: flex;
+    flex-direction: row;
+}
+.btn{
+    padding: 10px;
+    color: #fff;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    background: #960f9b;
+    margin: 10px
+}
+

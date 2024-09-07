@@ -1,0 +1,30 @@
+.contenedor-home{
+    min-height: 85vh;
+}
+.titulo-home{
+    margin: 2%;
+}
+h1{
+    text-align: center;
+    margin: 10px;
+    color: #d4388b; 
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 60px;
+    padding: 20px;
+}
+
+.card {
+    text-align: center;
+    border: 1px solid #df99c4; ;
+    padding: 15px;
+    background-color: #fff;
+}
+
+.btn{
+    background-color: #d4388b; 
+    border-color:  #77214c; 
+}

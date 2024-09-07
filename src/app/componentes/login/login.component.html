@@ -1,0 +1,18 @@
+<div class="form-login">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Ingrese su email:</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" [(ngModel)]="email">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlText1" class="form-label">Ingrese su contraseña:</label>
+      <input type="password" class="form-control" id="exampleFormControlText1" [(ngModel)]="pwd">
+    </div>
+
+    <div class="contenedor-botones">
+        <!-- <button class="btn" type="button" (click)="logout()" [disabled]="!this.sesion.isSessionActive()">Logout</button> -->
+        <div>
+          <button class="btn" type="button" (click)="login()">Login</button>
+          <p>¿No tiene un usuario? <a [routerLink]="['/register']">Registrese aquí</a></p>
+        </div>
+    </div>
+  </div>
