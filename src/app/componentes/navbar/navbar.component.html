@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-color">
     <div class="container-fluid">
         <div>
-            <img src="../../../assets/img/LOGO-SINFONDO2.png" alt="" class="logo-navbar">
+            <button class="imagen-boton"  [routerLink]="['/home']">
+                <img src="../../../assets/img/LOGO-SINFONDO2.png" alt="" class="logo-navbar">
+            </button>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="nav nav-underline ms-auto">
@@ -15,7 +17,7 @@
                     <a class="nav-link" [routerLink]="['sobre-mi']">Sobre mí</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['login']">Login</a>
+                    <a class="nav-link" [routerLink]="['login']">Inicie Sesión</a>
                 </li>
                 <!-- <li class="nav-item">
                     <button class="btn" >Cerrar Sesión</button>

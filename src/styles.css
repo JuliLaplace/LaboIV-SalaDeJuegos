@@ -1,7 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nerko+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 body{
-    background-image: url("https://cdn.pixabay.com/photo/2021/07/17/02/54/pattern-6472168_960_720.jpg");
+    background-image: url('./assets/img/Background.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    font-family:'Quicksand';
+}
+
+h1{
+    /* font-family: 'Nerko One'; */
+    /* font-family: 'Bebas Neue'; */
+    
+    font-size: 90px;
+    text-align: center;
+    color: #343B55;
+    font-weight:700;
 }

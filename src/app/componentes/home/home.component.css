@@ -1,13 +1,5 @@
 .contenedor-home{
-    min-height: 85vh;
-}
-.titulo-home{
-    margin: 2%;
-}
-h1{
-    text-align: center;
-    margin: 10px;
-    color: #d4388b; 
+    min-height: 100vh;
 }
 
 .grid-container {
@@ -19,12 +11,27 @@ h1{
 
 .card {
     text-align: center;
-    border: 1px solid #df99c4; ;
+    border: 2px solid #343B55; 
     padding: 15px;
-    background-color: #fff;
+    border-radius: 20px;
 }
-
+.card h3{
+    font-weight: 600;
+}
+.card p{
+    text-align: justify;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 5px;
+}
 .btn{
-    background-color: #d4388b; 
-    border-color:  #77214c; 
+    /* background-color: #d4388b;  */
+    /* background-color: #8a2259; */
+    color: #ffffff;
+    background-color: #343B55;
+    
+}
+.btn a{
+    font-weight: bolder;
+
 }

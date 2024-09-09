@@ -1,19 +1,25 @@
-.navbar-color{
-    background-color: #EECAD5;
-    color: rgb(39, 1, 54);
-    height:10%; 
-    padding-top: 10px; 
-    padding-bottom: 10px; 
+.navbar-color {
+    /* background-color: #EECAD5; */
+    height: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.navbar-color .nav-link, .navbar-brand {
-    color: #77214c; 
+.navbar-color .nav-link,
+.navbar-brand {
+    color: #343B55; 
+    font-weight: 600;
 }
 
-.navbar-color .nav-link:hover {
-    color: #d4388b; 
-}
 
-.logo-navbar{
+.logo-navbar {
     width: 200px;
+}
+
+.imagen-boton {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
 }
