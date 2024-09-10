@@ -1,19 +1,23 @@
-.contenedor-home{
-    min-height: 100vh;
-}
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 60px;
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 60px; 
     padding: 20px;
 }
 
+
 .card {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     border: 2px solid #343B55; 
     padding: 15px;
     border-radius: 20px;
+    flex: 1 1 calc(25% - 60px); /* calculo con el 60px de gap para que ocupen el mismo tamañno de contenido - todas van a ocupar el 25% */
+    min-width: 400px; /* con esto le doy un anchjo a las cards para que no se me rompan cuando se achica la pantalla */
+    
 }
 .card h3{
     font-weight: 600;
@@ -29,9 +33,20 @@
     /* background-color: #8a2259; */
     color: #ffffff;
     background-color: #343B55;
+    align-self: center; 
     
 }
-.btn a{
-    font-weight: bolder;
+.btn {
+    font-weight: bold;
 
+}
+.btn:hover{
+    background: #FFC2F8; 
+    color: #343B55;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

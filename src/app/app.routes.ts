@@ -5,6 +5,10 @@ import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { ChatComponent } from './componentes/chat/chat.component';
 import { PaginaErrorComponent } from './componentes/pagina-error/pagina-error.component';
+import { AhorcadoComponent } from './componentes/ahorcado/ahorcado.component';
+import { PreguntadosComponent } from './componentes/preguntados/preguntados.component';
+import { MayorMenorComponent } from './componentes/mayor-menor/mayor-menor.component';
+import { DetenerTiempoComponent } from './componentes/detener-tiempo/detener-tiempo.component';
 
 export const routes: Routes = [
     {
@@ -35,6 +39,26 @@ export const routes: Routes = [
       {
         path: 'chat',
         component: ChatComponent,
+    
+      },
+      {
+        path: 'ahorcado',
+        component: AhorcadoComponent,
+    
+      },
+      {
+        path: 'preguntados',
+        component: PreguntadosComponent,
+    
+      },
+      {
+        path: 'mayor-menor',
+        component: MayorMenorComponent,
+    
+      },
+      {
+        path: 'detener-tiempo',
+        component: DetenerTiempoComponent,
     
       },
       {

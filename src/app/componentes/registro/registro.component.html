@@ -1,16 +1,18 @@
-<div class="login">
-  <h1>Registrese</h1>
-  <form class="login-form" action="#">
-    <label>
-      <input type="email"  [(ngModel)]="email" name="email" required placeholder="Email">
-    </label>
-    <label>
-      <input type="password" [(ngModel)]="pwd"  name="pwd" required placeholder="Contraseña">
-    </label>
-    <input type="submit" value="Ingresar">
-  </form>
-  <div>
-    <p>¿Ya tiene una cuenta?</p>
-    <h5><a [routerLink]="['/login']">Inicie Sesión</a></h5>
+<div class="contenedor">
+  <div class="registro">
+    <h1>Registrese</h1>
+    <form class="registro-form">
+      <label>
+        <input type="email"  [(ngModel)]="email" name="email" required placeholder="Email">
+      </label>
+      <label>
+        <input type="password" [(ngModel)]="pwd"  name="pwd" required placeholder="Contraseña">
+      </label>
+      <input type="submit" value="Registrarse">
+    </form>
+    <div>
+      <p>¿Ya tiene una cuenta?</p>
+      <a [routerLink]="['/login']">Inicie Sesión</a>
+    </div>
   </div>
 </div>

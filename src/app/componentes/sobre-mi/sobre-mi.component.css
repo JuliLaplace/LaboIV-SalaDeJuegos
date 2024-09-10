@@ -1,16 +1,19 @@
+
+
 .contenedor-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
 }
+
 
 .card {
     position: relative;
     width: 30%;
     height: 500px;
     margin: 40px;
-}
+} 
+
 
 .card_landing {  
     background-image: url("../../../assets/img/julix.jpg");
@@ -21,6 +24,8 @@
     box-shadow: 0 5px 10px #000;
     z-index: 1;
 }
+
+
 
 .card .card_info, .card .card_juego {
     position: absolute;
@@ -33,7 +38,7 @@
     margin: auto;
     padding: 15px;
     background: #ffffff;
-    z-index: -1;
+    z-index: 0;
     box-shadow: 0 5px 10px #000;
     transition: .5s;
 }
@@ -44,6 +49,7 @@
 .card:hover .card_juego {
     left: -200%;
 }
+
 
 .card_info .head, .card_juego .head {
     padding: 5px 0;
@@ -75,4 +81,10 @@
     background: #343B55; 
     display: block;
     margin-top: 10px;
+}
+.card_info .action .btn:hover, .card_juego .action .btn:hover  {
+    
+    background: #FFC2F8; 
+    color: #343B55;
+    
 }
