@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 90vh;
 }
 
 
@@ -12,6 +13,8 @@
     width: 30%;
     height: 500px;
     margin: 40px;
+    border-radius: 30px;
+    
 } 
 
 
@@ -22,6 +25,7 @@
     width: 100%;
     height: 100%;
     box-shadow: 0 5px 10px #000;
+    border-radius: 30px;
     z-index: 1;
 }
 
@@ -37,9 +41,10 @@
     top: 0;
     margin: auto;
     padding: 15px;
-    background: #ffffff;
+    background: #343B55;
     z-index: 0;
     box-shadow: 0 5px 10px #000;
+    border-radius: 30px;
     transition: .5s;
 }
 
@@ -53,18 +58,20 @@
 
 .card_info .head, .card_juego .head {
     padding: 5px 0;
-    border-bottom: solid 1px #343B55; 
+    /* border-bottom: solid 1px #343B55;  */
+    border-bottom: solid 1px #fff;
 }
 
 .card_info .head .title, .card_juego .head .title {
     font-size: 20px;
-    font-weight: 700;
-    color: #343B55; 
+    font-weight: bolder;
+    /* color: #343B55;  */
+    color: #fff;
 }
 
 
-.card_info .head .description .item p, .card_juego .head .description .item p {
-    font-size: 13px;
+.card_info p, .card_juego p {
+    color: #fff;
 }
 
 .card_info .content, .card_juego .content {
@@ -74,17 +81,19 @@
 
 .card_info .action .btn, .card_juego .action .btn  {
     padding: 10px;
-    color: #fff;
+    /* color: #fff; */
+    color: #343B55;
+    font-weight: bolder;
     width: 100%;
     text-decoration: none;
     text-align: center;
-    background: #343B55; 
+    /* background: #343B55;  */
+    background: #FFC2F8; 
     display: block;
     margin-top: 10px;
 }
 .card_info .action .btn:hover, .card_juego .action .btn:hover  {
-    
-    background: #FFC2F8; 
+    background: #f89bed;
     color: #343B55;
     
 }

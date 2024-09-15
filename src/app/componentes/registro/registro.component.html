@@ -8,9 +8,10 @@
       <label>
         <input type="password" [(ngModel)]="pwd"  name="pwd" required placeholder="Contraseña">
       </label>
-      <input type="submit" value="Registrarse">
+      <input type="submit" value="Registrarse" (click)="registrar()">
     </form>
-    <div>
+    <div class="contenedor-login">
+      <p class="error-registro" [class.show]="errorFlag">{{errorMsj}}</p>
       <p>¿Ya tiene una cuenta?</p>
       <a [routerLink]="['/login']">Inicie Sesión</a>
     </div>

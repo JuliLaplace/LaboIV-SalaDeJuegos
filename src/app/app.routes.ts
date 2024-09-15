@@ -10,6 +10,7 @@ import { PreguntadosComponent } from './componentes/preguntados/preguntados.comp
 import { MayorMenorComponent } from './componentes/mayor-menor/mayor-menor.component';
 import { DetenerTiempoComponent } from './componentes/detener-tiempo/detener-tiempo.component';
 
+
 export const routes: Routes = [
     {
         path: '',
@@ -61,9 +62,9 @@ export const routes: Routes = [
         component: DetenerTiempoComponent,
     
       },
-      {
-        path: '**',
-        component: PaginaErrorComponent,
+      // {
+      //   path: '**',
+      //   component: PaginaErrorComponent,
     
-      }
+      // }
 ];
