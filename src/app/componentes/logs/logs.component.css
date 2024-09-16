@@ -1,0 +1,18 @@
+.btn {
+    max-width: 300px;
+    background-color: #FFC2F8;
+    border-color: #343B55;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #ee8fe3;
+}
+
+.table {
+    border: 3px solid #343B55;
+    border-radius: 15px; 
+    overflow: hidden; 
+    border-collapse: separate;
+}
+

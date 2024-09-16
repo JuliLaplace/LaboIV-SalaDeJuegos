@@ -71,13 +71,16 @@
     </div>
 
     <div class="flex-container" *ngIf="!this.auth.currentUser">
-            <div class="card" style="width: 18rem;">
+            <div class="card card-logout" style="width: 25rem; background-color:#343B55;">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
+                    <div>
+                        <img src="../../../assets/gif/gif-joystic-unscreen.gif" alt="joystic-gif">
+                    </div>
+                  <h3 class="card-title">¡Hola!</h3>
+                  <p class="card-text">Para poder disfrutar de los juegos de Mini Games Arena, debés <a [routerLink]="['login']" class="card-link">Iniciar sesión</a>.</p>
+                  <p>¿No tenés una cuenta? Te invitamos a <a [routerLink]="['registro']" class="card-link">registrate aquí</a>.</p>
+                  
+                  
                 </div>
               </div>
     </div>

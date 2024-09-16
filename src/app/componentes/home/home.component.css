@@ -63,3 +63,16 @@
     align-items: center;
     flex-grow: 1;
 }
+
+.card-title{
+    font-weight: 900;
+}
+
+.card-logout{
+    width: 25rem; 
+    background-color:#343B55;
+    color: aliceblue;
+}
+ p a{
+    color:#FFC2F8;
+}

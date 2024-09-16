@@ -1,0 +1,30 @@
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center"> <!-- Ajustamos el ancho del contenedor -->
+            <h1>LOGS</h1>
+            <div class="d-grid gap-2 d-flex justify-content-center mb-4"> <!-- Centrado del botón -->
+                <button (click)="GetData()" class="btn">Obtener registros</button> <!-- Clase btn-primary para mejor estilo -->
+            </div>
+
+            <div *ngIf="loginsCollection.length > 0">
+                <table class="table table-bordered table-striped text-center table-responsive"> <!-- Borde de la tabla, centrado y ajustado -->
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let login of loginsCollection; let i = index">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td>{{ login.user }}</td>
+                            <td>{{ (login.fecha.seconds * 1000) | date:'dd-MM-yy HH:mm' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

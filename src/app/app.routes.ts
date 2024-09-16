@@ -9,6 +9,7 @@ import { AhorcadoComponent } from './componentes/ahorcado/ahorcado.component';
 import { PreguntadosComponent } from './componentes/preguntados/preguntados.component';
 import { MayorMenorComponent } from './componentes/mayor-menor/mayor-menor.component';
 import { DetenerTiempoComponent } from './componentes/detener-tiempo/detener-tiempo.component';
+import { LogsComponent } from './componentes/logs/logs.component';
 
 
 export const routes: Routes = [
@@ -38,30 +39,35 @@ export const routes: Routes = [
     
       },
       {
-        path: 'chat',
-        component: ChatComponent,
+        path: 'logs',
+        component: LogsComponent,
     
       },
-      {
-        path: 'ahorcado',
-        component: AhorcadoComponent,
+      // {
+      //   path: 'chat',
+      //   component: ChatComponent,
     
-      },
-      {
-        path: 'preguntados',
-        component: PreguntadosComponent,
+      // },
+      // {
+      //   path: 'ahorcado',
+      //   component: AhorcadoComponent,
     
-      },
-      {
-        path: 'mayor-menor',
-        component: MayorMenorComponent,
+      // },
+      // {
+      //   path: 'preguntados',
+      //   component: PreguntadosComponent,
     
-      },
-      {
-        path: 'detener-tiempo',
-        component: DetenerTiempoComponent,
+      // },
+      // {
+      //   path: 'mayor-menor',
+      //   component: MayorMenorComponent,
     
-      },
+      // },
+      // {
+      //   path: 'detener-tiempo',
+      //   component: DetenerTiempoComponent,
+    
+      // },
       {
         path: '**',
         component: PaginaErrorComponent,
