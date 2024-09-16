@@ -20,7 +20,6 @@ export class NavbarComponent {
 
   cerrarSesion(){
     signOut(this.auth).then(() => {
-      console.log(this.auth.currentUser?.email)
       this.router.navigate(['/login']);
     })
   }

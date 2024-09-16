@@ -62,9 +62,9 @@ export const routes: Routes = [
         component: DetenerTiempoComponent,
     
       },
-      // {
-      //   path: '**',
-      //   component: PaginaErrorComponent,
+      {
+        path: '**',
+        component: PaginaErrorComponent,
     
-      // }
+      }
 ];

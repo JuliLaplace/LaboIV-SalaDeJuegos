@@ -1,26 +1,26 @@
-/* .contenedor-home{
-    height: 90vh;
-} */
+
 
 .flex-container {
     display: flex;
     flex-wrap: wrap; 
-    justify-content: space-between; 
+    justify-content: center; 
+    align-items: center;
     gap: 60px; 
     padding: 20px;
+    flex-grow: 1;
 }
 
 
 .card {
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
     border: 2px solid #343B55; 
     padding: 15px;
     border-radius: 20px;
-    flex: 1 1 calc(25% - 60px); /* calculo con el 60px de gap para que ocupen el mismo tamañno de contenido - todas van a ocupar el 25% */
-    min-width: 400px; /* con esto le doy un anchjo a las cards para que no se me rompan cuando se achica la pantalla */
-    
+    max-width: 350px;
+    max-height: 600px;
 }
 .card h3{
     font-weight: 600;
@@ -28,7 +28,7 @@
 .card p{
     text-align: justify;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     padding: 5px;
 }
 .btn{
@@ -51,5 +51,15 @@
 .card-body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
+}
+
+
+
+.flex-card{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center;
+    flex-grow: 1;
 }
