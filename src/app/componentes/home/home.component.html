@@ -3,7 +3,7 @@
     <div class="flex-container" *ngIf="this.auth.currentUser">
         <div class="card">
             <div>
-                <img src="https://firebasestorage.googleapis.com/v0/b/mini-games-arena.appspot.com/o/gif-ahorcado.gif?alt=media&token=4169bde6-11af-4e7c-8144-9e3cf4d70f4c"
+                <img src="../../../assets/gif/gif-ahorcado.gif"
                     alt="gif animado de guillotina">
             </div>
             <div class="card-body">
@@ -15,7 +15,7 @@
                         una palabra secreta letra por letra. Cada vez que el jugador sugiere una letra incorrecta, se
                         dibuja una parte del cuerpo en una horca. Objetivo: adivinar la palabra antes de que se termine de dibujar
                         la figura del ahorcado.</p>
-                    <button [routerLink]="['ahorcado']" class="btn">JUGAR</button>
+                    <button  class="btn">JUGAR</button>
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
                     <p class="card-text">La trivia de preguntas es un juego en el que los jugadores responden preguntas
                         relacionadas exclusivamente con la serie de televisión Rick and Morty. Cada respuesta correcta otorga
                         puntos, mientras que las respuestas incorrectas no suman.</p>
-                    <button [routerLink]="['preguntados']" class="btn">JUGAR</button>
+                    <button  class="btn">JUGAR</button>
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
                     <p class="card-text">Juego de cartas en el que los jugadores deben adivinar si
                         la próxima carta revelada será mayor o menor que la carta actual. Si la predicción es correcta, suma 1 punto; si
                         es igual, no suma puntos; si la predicción es incorrecta, pierdes.</p>
-                    <button [routerLink]="['mayor-menor']" class="btn">JUGAR</button>
+                    <button class="btn">JUGAR</button>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                     <p class="card-text">Este juego de precisión en donde el jugador debe parar
                         un cronómetro exactamente en un tiempo objetivo. Si logra detener el cronómetro en el tiempo preciso,suma 3
                         puntos. Si falla, ya sea por detenerse antes o después del tiempo exacto, pierde la partida..</p>
-                    <button [routerLink]="['detener-tiempo']" class="btn">JUGAR</button>
+                    <button class="btn">JUGAR</button>
                 </div>
             </div>
         </div>

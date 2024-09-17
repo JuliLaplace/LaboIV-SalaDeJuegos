@@ -32,7 +32,7 @@ export class RegistroComponent {
   registrar() {
     createUserWithEmailAndPassword(this.auth, this.email, this.pwd)
     .then((res) => {
-      this.servicioLogger.logger();
+      this.servicioLogger.crearLog();
       this.limpiarCampos();
       this.router.navigate(['/home']);
       this.errorFlag = false;

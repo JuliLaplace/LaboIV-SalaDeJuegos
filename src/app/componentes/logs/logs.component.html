@@ -1,14 +1,11 @@
 
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-8 text-center"> <!-- Ajustamos el ancho del contenedor -->
+        <div class="col-md-8 text-center"> 
             <h1>LOGS</h1>
-            <div class="d-grid gap-2 d-flex justify-content-center mb-4"> <!-- Centrado del botón -->
-                <button (click)="GetData()" class="btn">Obtener registros</button> <!-- Clase btn-primary para mejor estilo -->
-            </div>
 
-            <div *ngIf="loginsCollection.length > 0">
-                <table class="table table-bordered table-striped text-center table-responsive"> <!-- Borde de la tabla, centrado y ajustado -->
+            <div *ngIf=" this.servicioLogger.loginsCollection.length > 0">
+                <table class="table table-bordered table-striped text-center table-responsive">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -17,8 +14,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let login of loginsCollection; let i = index">
-                            <th scope="row">{{ i + 1 }}</th>
+                        <tr *ngFor="let login of this.servicioLogger.loginsCollection; let i = index">
+                            <td scope="row">{{ i + 1 }}</td>
                             <td>{{ login.user }}</td>
                             <td>{{ (login.fecha.seconds * 1000) | date:'dd-MM-yy HH:mm' }}</td>
                         </tr>

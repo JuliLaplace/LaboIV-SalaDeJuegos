@@ -43,11 +43,11 @@ export const routes: Routes = [
         component: LogsComponent,
     
       },
-      // {
-      //   path: 'chat',
-      //   component: ChatComponent,
+      {
+        path: 'chat',
+        component: ChatComponent,
     
-      // },
+      },
       // {
       //   path: 'ahorcado',
       //   component: AhorcadoComponent,

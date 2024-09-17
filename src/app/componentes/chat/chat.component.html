@@ -1,3 +1,14 @@
-<div class="contenedor-home">
+<div class="contenedor">
     <h1>SALA DE CHAT</h1>
+
+    <div class="contenedor-chat">
+        <div class="contenido-chat" *ngFor="let m of mensajes">
+            <p>{{m.nombre}} : {{m.mensaje}}</p>
+        </div>
+        <div class="input">
+            <input type="text">
+            <button>Enviar</button>
+
+        </div>
+    </div>
 </div>

@@ -25,7 +25,7 @@ export class LoginComponent {
   login() {
     signInWithEmailAndPassword(this.auth, this.email, this.pwd)
     .then((res) => {
-      this.servicioLogger.logger();
+      this.servicioLogger.crearLog();
       this.limpiarCampos();
       this.router.navigate(['/home']);
     })
@@ -38,9 +38,6 @@ export class LoginComponent {
         }
       })
     }
-    
-    
-
 
 
   registroAutomatico(param: string) {

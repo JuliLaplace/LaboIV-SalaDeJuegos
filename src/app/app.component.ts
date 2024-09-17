@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { LoggerService } from './servicios/logger.service';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,10 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'mini-games';
+
+
+  constructor(public servicioLogger : LoggerService) {
+
+    
+  }
 }
