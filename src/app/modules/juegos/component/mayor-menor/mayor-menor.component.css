@@ -18,6 +18,13 @@
     justify-content: center;
 }
 
+.contenedor-datos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
 h3, h5{
     color: aliceblue;
     margin: 10px;
@@ -62,6 +69,15 @@ p{
 
     p, h5{
         color: #343B55; 
+        font-weight: bold;
     }
 }
 
+.hidden {
+    visibility: hidden; 
+
+}
+.visible {
+    visibility: visible; 
+
+}

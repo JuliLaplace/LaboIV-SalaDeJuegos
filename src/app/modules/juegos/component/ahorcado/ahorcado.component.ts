@@ -8,7 +8,10 @@ import { AhorcadoService } from '../../../../servicios/ahorcado.service';
 })
 export class AhorcadoComponent {
 
-  vidas:number=6;
+  vidasUsuario: number = 6;
+  vidas: boolean[] = [true, true, true, true, true, true];
+  resultado: boolean = false;;
+  mesajeResultado!: string;
   juegoFinalizado: boolean = false;
   palabraParaAdivinar!: string;
   letrasPorAdivinar: string[] = []; //array con las letras de la palabra para adivinar
@@ -21,12 +24,13 @@ export class AhorcadoComponent {
 
   ngOnInit(): void {
     this.iniciarJuego();
-    console.log(this.palabraParaAdivinar)
+    
   }
 
   iniciarJuego(){
     this.palabraParaAdivinar = this.ahorcado.obtenerPalabra();
     this.letrasPorAdivinar = this.obtenerLetrasPalabra();
+    console.log(this.palabraParaAdivinar)
   }
 
 
@@ -37,16 +41,22 @@ export class AhorcadoComponent {
   }
 
   letraSeleccionadaBotonera(letra: string) {
-
-    if(this.vidas>0){
+    this.resultado=true;
+    if(this.vidasUsuario>0){
       this.letrasYaUsadas.push(letra);
       if(this.palabraParaAdivinar.includes(letra)){
-        console.log("bien");
+        this.mesajeResultado="¡Correcto!"
+        this.score +=1;
         this.letrasAcertadas.push(letra);
       }else{
-        console.log("mal");
-        this.perderVidas();
+        this.mesajeResultado="¡Fallaste!"
+        this.perderVida();
       }
+    }
+    if (this.vidasUsuario === 0) {
+      this.juegoFinalizado = true;
+      this.mesajeResultado="La palabra era: " + this.palabraParaAdivinar;
+      
     }
   }
 
@@ -58,11 +68,26 @@ export class AhorcadoComponent {
     return this.letrasYaUsadas.includes(letra);
   }
 
-  perderVidas(){
-    this.vidas = this.vidas-1;
+  perderVida() {
+    if (this.vidasUsuario > 0) {
+      this.vidasUsuario--;
+      this.vidas[this.vidasUsuario] = false;
+    }
+  }
+  reiniciarVidas(){
+    this.vidasUsuario = 6;
   }
 
-  reiniciarVidas(){
-    this.vidas = 6;
+  reiniciarJuego(){
+    this.juegoFinalizado = false;
+    this.vidasUsuario = 6;
+    this.vidas = [true, true, true, true, true, true];
+    this.score = 0;
+    this.letrasYaUsadas = []; // Restablecer letras ya usadas
+    this.letrasAcertadas = [];
+    this.resultado=false;
+    this.iniciarJuego();
   }
+
+  
 }

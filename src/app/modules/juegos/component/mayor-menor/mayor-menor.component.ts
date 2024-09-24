@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MazoCartasService } from '../../../../servicios/mazo-cartas.service';
 
 @Component({
@@ -28,57 +28,64 @@ export class MayorMenorComponent {
     this.servicioMazo.getMazo().subscribe(respuesta => {
       this.mazoId = respuesta.deck_id; // asi me devuelve la api el id del mazo y lo guardo en mi componente.
       console.log(this.mazoId);
-
       this.iniciarJuego();
     });
   }
 
 
   iniciarJuego() {
-    if (this.mazoId) { //me fijo que hay mazo disponible
-      this.servicioMazo.getCarta(this.mazoId).subscribe(response => {
-        this.cartaActual = response.cards[0];  // saco la primer carta para mostrar
-      });
-      this.servicioMazo.getCarta(this.mazoId).subscribe(response => {
-        this.siguienteCarta = response.cards[0];  // saco la carta para fijarme si acierta o no (pero no la muestro)
-        this.cartasEnMazo = response.remaining;
-      });
-    } else {
+    if (!this.mazoId) { //me fijo que hay mazo disponible
       console.log("no hay mazo disponible");
     }
+    this.servicioMazo.getCarta(this.mazoId).subscribe(response => {
+      this.cartaActual = response.cards[0];  // saco la primer carta para mostrar
+    });
+    this.servicioMazo.getCarta(this.mazoId).subscribe(response => {
+      this.siguienteCarta = response.cards[0];  // saco la carta para fijarme si acierta o no (pero no la muestro)
+      this.cartasEnMazo = response.remaining;
+    });
+
   }
 
   adivinar(opcion: string) {
 
-    if (this.juegoFinalizado) {
-      return;
-    }
-
+    // if (this.juegoFinalizado) {
+    //   return; //aca voy a tener que mostrar que perdió
+    // }
 
     const valorActual = this.obtenerValorCartaEnNumero(this.cartaActual.value);
     const valorSiguiente = this.obtenerValorCartaEnNumero(this.siguienteCarta.value);
 
     let usuarioAdivina = false; //seteo en false mi condicion antes de comparar.
+    let esEmpate = false; //para mostrar el empate.
 
     if (opcion == 'mayor' && valorSiguiente > valorActual) {
       usuarioAdivina = true;
     } else if (opcion === 'menor' && valorSiguiente < valorActual) {
       usuarioAdivina = true;
+    } else if (valorActual === valorSiguiente) {
+      esEmpate = true;
     }
 
     this.resultado = true;
-    this.mesajeResultado = usuarioAdivina ? '¡Correcto!' : '¡Fallaste!';
+    // this.mesajeResultado = usuarioAdivina ? '¡Correcto!' : '¡Fallaste!';
 
-    if (!usuarioAdivina) {
+    if (esEmpate) {
+      this.mesajeResultado = '¡Empate!';
+    } else if (usuarioAdivina) {
+      this.mesajeResultado = '¡Correcto!';
+      this.score += 1;
+    } else {
+      this.mesajeResultado = '¡Fallaste!';
       this.perderVida();
-    }else{
-      this.score += 3;
     }
+
+
 
     if (this.vidasUsuario === 0) {
 
-      this.juegoFinalizado = true; 
-      this.mesajeResultado = '¡Te quedaste sin vidas';
+      this.juegoFinalizado = true;
+      this.mesajeResultado = '¡Te quedaste sin vidas!';
       return;
     } else {
 
@@ -91,7 +98,6 @@ export class MayorMenorComponent {
   }
 
   obtenerValorCartaEnNumero(valor: string): number {
-
     switch (valor) {
       case 'ACE':
         return 14;
@@ -111,6 +117,19 @@ export class MayorMenorComponent {
       this.vidasUsuario--;
       this.vidas[this.vidasUsuario] = false;
     }
+  }
+
+  reiniciarJuego() {
+    this.juegoFinalizado = false;
+    this.vidasUsuario = 3;
+    this.vidas = [true, true, true];
+    this.score = 0;
+
+
+    this.servicioMazo.getMazo().subscribe(respuesta => {
+      this.mazoId = respuesta.deck_id;
+      this.iniciarJuego();
+    });
   }
 
 }

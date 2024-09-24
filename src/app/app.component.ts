@@ -1,20 +1,30 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { LoggerService } from './servicios/logger.service';
+import { NavbarJuegosComponent } from './componentes/navbar-juegos/navbar-juegos.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent],
+  imports: [RouterOutlet, NavbarComponent,NavbarJuegosComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
 
-  constructor(public servicioLogger : LoggerService) {
+  mostrarNavbarJuegos: boolean = false;
+  constructor(public servicioLogger : LoggerService, private router: Router) {}
 
-    
+
+
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.mostrarNavbarJuegos = event.url.startsWith('/juegos');
+      }
+    });
   }
 }

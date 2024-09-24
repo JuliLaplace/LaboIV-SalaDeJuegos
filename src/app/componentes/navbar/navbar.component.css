@@ -28,5 +28,6 @@ li{
 
 .dropdown{
     min-width: 160px;
+    cursor: pointer;
 }
 

@@ -17,9 +17,17 @@
     align-items: center;
     justify-content: center;
 }
+.contenedor-datos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
 
 .palabra-oculta p {
     display: inline-block;
+    text-align: center;
     font-size: 24px;
     color: aliceblue;
     margin: 10px;
@@ -38,19 +46,43 @@ h3, p{
 
 .mensaje-perdiste{
     position: absolute;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #84f3fb;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    width: 50%;
+    width: 70%;
 
     p, h5{
         color: #343B55; 
+        font-weight: bold;
     }
 }
 
 img{
     border-radius: 10px;
+}
+.btn{
+    color: #343B55;
+    background: #FFC2F8; 
+    align-self: center; 
+    font-weight: bold;
+    margin:0px 10px;
+    
+}
+
+.btn:hover{
+    background: #f89bed;
+    color: #343B55;
+    
+}
+.hidden {
+    visibility: hidden; 
+
+}
+.visible {
+    visibility: visible; 
 }

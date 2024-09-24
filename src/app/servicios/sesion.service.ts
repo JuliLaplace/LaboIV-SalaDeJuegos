@@ -11,7 +11,6 @@ export class SesionService {
   constructor(private auth: Auth) { 
     onAuthStateChanged(auth, (usuario)=>{
       this.usuarioActual = usuario;
-      console.log(this.usuarioActual);
     });
   }
 

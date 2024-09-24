@@ -1,41 +1,56 @@
+
 <div class="contenedor">
     <h1>MAYOR O MENOR</h1>
     <div class="contenedor-juego">
 
         <div class="contenedor-juego-on">
             <h3>Carta en mesa:</h3>
-            <div *ngIf="cartaActual">
+
+            <!-- <div *ngIf="cartaActual">
                 <img [src]="cartaActual.image" >
+            </div> -->
+            <div class="contenedor-carta">
+                
+                <div *ngIf="!juegoFinalizado">
+                    <img [src]="cartaActual?.image" alt="Carta en mesa">
+                </div>
+                
             </div>
+
     
-            <h5>La siguiente carta del mazo ¿es mayor o menor que la carta en mesa?</h5>
+            <h5 *ngIf="!juegoFinalizado">La siguiente carta del mazo ¿es mayor o menor que la carta en mesa?</h5>
             <div class="contenedor-botones">
                 <button class="btn" (click)="adivinar('mayor')">Mayor</button>
                 <button class="btn" (click)="adivinar('menor')">Menor</button>
             </div>
+            <div class="contenedor-datos" *ngIf="!juegoFinalizado">
+                <div>  
+
+                    <p>Cartas restantes: {{cartasEnMazo}}</p>
+                </div>
+                <div [ngClass]="resultado ? 'visible' : 'hidden'">
+                    <p>{{mesajeResultado}}</p>
+                </div>
+                <div class="vidas-container">
+                    <img *ngFor="let vida of vidas" [src]="vida ? '../../../assets/icons/vida.png' : '../../../assets/icons/sin-vida.png'" alt="corazones de vida" class="icono-vida">
+                </div>
+            </div>
             <div>
-                <p>Cartas en mazo: {{cartasEnMazo}}</p>
+                <p>Score: {{score}}</p>
             </div>
-              
-            <div *ngIf="resultado">
-                <p>{{mesajeResultado}}</p>
-            </div>
-    
-            <!-- <div>
-                <img src="../../../assets/icons/vida.png" alt="vida-1" class="icono-vida">
-                <img src="../../../assets/icons/vida.png" alt="vida-2" class="icono-vida">
-                <img src="../../../assets/icons/vida.png" alt="vida-3" class="icono-vida">
-            </div> -->
-            <div class="vidas-container">
-                <img *ngFor="let vida of vidas" [src]="vida ? '../../../assets/icons/vida.png' : '../../../assets/icons/sin-vida.png'" alt="corazones de vida" class="icono-vida">
-            </div>
+            
         </div>
 
 
         <div *ngIf="juegoFinalizado" class="mensaje-perdiste">
             <h5>Perdiste</h5>
             <img src="../../../assets/icons/juego-terminado.png" alt="">
-            <button class="btn">Volver a jugar</button>
+            <p>Score total: {{score}}</p>
+            {{mesajeResultado}}
+            <div contenedor-botones>
+                <button class="btn" (click)="reiniciarJuego()">Volver a jugar</button>
+                <button class="btn" [routerLink]="['/home']">Volver al Home</button>
+            </div>
         </div>
     </div>
 
