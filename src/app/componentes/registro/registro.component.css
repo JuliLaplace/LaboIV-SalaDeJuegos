@@ -39,10 +39,15 @@
 
     p {
         color: aliceblue;
-        margin-bottom: 0;
+        margin: 20px;
+    }
+
+    .contenedor-login{
+        display: flex;
+        flex-direction: column;
     }
     .error-registro {
-        margin-bottom: 15px;
+        margin: 20px;
         color: red;
         height: 10px; 
         visibility: hidden; 

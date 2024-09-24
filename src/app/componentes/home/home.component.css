@@ -38,12 +38,10 @@
     color: #ffffff;
     background-color: #343B55;
     align-self: center; 
+    font-weight: bold;
     
 }
-.btn {
-    font-weight: bold;
 
-}
 .btn:hover{
     background: #FFC2F8; 
     color: #343B55;

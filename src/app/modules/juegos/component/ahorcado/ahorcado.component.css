@@ -1,0 +1,56 @@
+.contenedor-juego{
+    display: flex;
+    flex-direction: column;
+    background-color: #343B55;
+    width: 50%;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.contenedor-juego-on{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.palabra-oculta p {
+    display: inline-block;
+    font-size: 24px;
+    color: aliceblue;
+    margin: 10px;
+}
+
+h3, p{
+    color: aliceblue;
+}
+.contenedor-juego-on .palabra-oculta {
+    margin-top: 10px;
+}
+
+.icono-vida{
+    height: 50px;
+}
+
+.mensaje-perdiste{
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: #84f3fb;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+
+    p, h5{
+        color: #343B55; 
+    }
+}
+
+img{
+    border-radius: 10px;
+}

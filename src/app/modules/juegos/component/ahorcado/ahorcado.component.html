@@ -1,0 +1,31 @@
+<div class="contenedor">
+    <h1>AHORCADO</h1>
+    <div class="contenedor-juego">
+
+        <div class="contenedor-juego-on">
+            <div>
+                <!-- <img src="../../../assets/img/horca.png" alt=""> -->
+                <img [src]="'../../../assets/img/horca-' + (7 - vidas) + '.png'" alt="horca">
+            </div>
+            <h3>Palabra a adivinar:</h3>
+            <div>
+                <p>{{palabraParaAdivinar}}</p>
+            </div>
+            <div class="palabra-oculta">
+                <p *ngFor="let letra of letrasPorAdivinar">{{mostrarLetra(letra)}}</p>
+                <!-- <p *ngFor="let letra of letrasPorAdivinar">{{letrasAcertadas.includes(letra) ? letra : '_'}}</p> -->
+            </div>
+            
+            <div class="botonera">
+                <button *ngFor="let letra of ahorcado.letras" (click)="letraSeleccionadaBotonera(letra)" [disabled]="letraUsada(letra)">{{letra}}</button>
+            </div>
+
+        </div>
+
+
+        <div *ngIf="juegoFinalizado" class="mensaje-perdiste">
+            <h5>Perdiste</h5>
+            <img src="../../../assets/icons/juego-terminado-2.png" alt="">
+        </div>
+    </div>
+</div>

@@ -15,7 +15,7 @@
                         una palabra secreta letra por letra. Cada vez que el jugador sugiere una letra incorrecta, se
                         dibuja una parte del cuerpo en una horca. Objetivo: adivinar la palabra antes de que se termine de dibujar
                         la figura del ahorcado.</p>
-                    <button  class="btn">JUGAR</button>
+                    <button  class="btn" [routerLink]="['/juegos/ahorcado']">JUGAR</button>
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
                     <p class="card-text">Juego de cartas en el que los jugadores deben adivinar si
                         la próxima carta revelada será mayor o menor que la carta actual. Si la predicción es correcta, suma 1 punto; si
                         es igual, no suma puntos; si la predicción es incorrecta, pierdes.</p>
-                    <button class="btn">JUGAR</button>
+                    <button class="btn" [routerLink]="['/juegos/mayor-menor']">JUGAR</button>
                 </div>
             </div>
         </div>
@@ -61,8 +61,8 @@
                 </div>
                 <div>
                     <p class="card-text">Este juego de precisión en donde el jugador debe parar
-                        un cronómetro exactamente en un tiempo objetivo. Si logra detener el cronómetro en el tiempo preciso,suma 3
-                        puntos. Si falla, ya sea por detenerse antes o después del tiempo exacto, pierde la partida..</p>
+                        un cronómetro exactamente en un tiempo objetivo. Si logra detener el cronómetro en el tiempo preciso, suma 3
+                        puntos. Si falla, ya sea por detenerse antes o después del tiempo exacto, pierde la partida.</p>
                     <button class="btn">JUGAR</button>
                 </div>
             </div>

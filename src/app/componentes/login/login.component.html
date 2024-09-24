@@ -1,4 +1,4 @@
-  <div class="contenedor" *ngIf="!this.auth.currentUser">
+  <div class="contenedor" *ngIf="!this.sesion.sesionActiva()">
     <div class="login">
       <h1>Inicie Sesión</h1>
       <form class="login-form" action="#">

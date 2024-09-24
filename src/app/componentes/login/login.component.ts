@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
-import { addDoc, collection, Firestore } from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { LoggerService } from '../../servicios/logger.service';
+import { LoginService } from '../../servicios/login.service';
+import { SesionService } from '../../servicios/sesion.service';
 
 @Component({
   selector: 'app-login',
@@ -18,25 +17,16 @@ export class LoginComponent {
   pwd: string = "";
   errorMsj: string = "";
   flagError: boolean = false;
-  public loginsCollection: any[] = [];
   
-  constructor(public auth: Auth, public router: Router, public servicioLogger : LoggerService) { }
+  constructor(private servicioLogin : LoginService, public sesion: SesionService) { }
   
   login() {
-    signInWithEmailAndPassword(this.auth, this.email, this.pwd)
-    .then((res) => {
-      this.servicioLogger.crearLog();
+    this.servicioLogin.login(this.email, this.pwd)
+    .then((respuesta) =>{
+      this.errorMsj = respuesta.errorMsj;
+      this.flagError = respuesta.errorFlag;
       this.limpiarCampos();
-      this.router.navigate(['/home']);
-    })
-    .catch((e) => {
-      this.flagError = true;
-      switch (e.code) {
-        default:
-          this.errorMsj = "Usuario o contraseña incorrectos."
-          break;
-        }
-      })
+      });
     }
 
 

@@ -1,0 +1,42 @@
+<div class="contenedor">
+    <h1>MAYOR O MENOR</h1>
+    <div class="contenedor-juego">
+
+        <div class="contenedor-juego-on">
+            <h3>Carta en mesa:</h3>
+            <div *ngIf="cartaActual">
+                <img [src]="cartaActual.image" >
+            </div>
+    
+            <h5>La siguiente carta del mazo ¿es mayor o menor que la carta en mesa?</h5>
+            <div class="contenedor-botones">
+                <button class="btn" (click)="adivinar('mayor')">Mayor</button>
+                <button class="btn" (click)="adivinar('menor')">Menor</button>
+            </div>
+            <div>
+                <p>Cartas en mazo: {{cartasEnMazo}}</p>
+            </div>
+              
+            <div *ngIf="resultado">
+                <p>{{mesajeResultado}}</p>
+            </div>
+    
+            <!-- <div>
+                <img src="../../../assets/icons/vida.png" alt="vida-1" class="icono-vida">
+                <img src="../../../assets/icons/vida.png" alt="vida-2" class="icono-vida">
+                <img src="../../../assets/icons/vida.png" alt="vida-3" class="icono-vida">
+            </div> -->
+            <div class="vidas-container">
+                <img *ngFor="let vida of vidas" [src]="vida ? '../../../assets/icons/vida.png' : '../../../assets/icons/sin-vida.png'" alt="corazones de vida" class="icono-vida">
+            </div>
+        </div>
+
+
+        <div *ngIf="juegoFinalizado" class="mensaje-perdiste">
+            <h5>Perdiste</h5>
+            <img src="../../../assets/icons/juego-terminado.png" alt="">
+            <button class="btn">Volver a jugar</button>
+        </div>
+    </div>
+
+</div>
