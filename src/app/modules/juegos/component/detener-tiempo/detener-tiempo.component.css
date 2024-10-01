@@ -34,24 +34,57 @@ h3, h5{
 p{
     color: aliceblue;
 }
+
+.cronometro-img{
+    border-radius: 100%;
+    background-color: rgb(14, 44, 44);
+    height: 250px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cronometro{
+   
+    border-radius: 100%;
+    background-color: aqua;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.tiempo{
+    background-color: aliceblue;
+    width: 80%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p{
+        color: black;
+        font-weight: 400;
+        text-align: center;
+        margin: 10px;
+    }
+}
 .contenedor-botones{
     margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    flex-wrap: wrap;
     width: 95%;
 }
-.fila-botones{
-    display: flex;
-    flex-direction: row;
-    flex-basis: 100%;
-    flex-wrap: nowrap;
-}
+
 .btn{
     color: #343B55;
-    background: #FFC2F8; 
+    background: #f89bed;
     flex-grow: 0.5;
     font-weight: bold;
     margin:10px 10px;
@@ -59,7 +92,8 @@ p{
 }
 
 .btn:hover{
-    background: #f89bed;
+    
+    background: #FFC2F8; 
     color: #343B55;
     
 }
@@ -93,4 +127,16 @@ p{
 .visible {
     visibility: visible; 
 
+}
+
+.gif{
+    height: 290px;
+    border-radius: 20px;
+}
+.reglas{
+    margin: 10px 10px 0px 10px;
+    text-align: justify;
+}
+.game-over{
+    border-radius: 20px;
 }

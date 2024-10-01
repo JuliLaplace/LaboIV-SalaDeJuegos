@@ -36,7 +36,7 @@
 
 
         <div *ngIf="juegoFinalizado" class="mensaje-perdiste">
-            <img  [src]="vidasUsuario>0 ? '../../../assets/icons/vida.png' : '../../../../../assets/img/horca-7.png' " alt="imagen ahorcado">
+            <img  [src]="vidasUsuario>0 ? '../../../assets/gif/vivo.gif' : '../../../../../assets/img/horca-7.png' " alt="imagen ahorcado">
             <p>Score total: {{score}}</p>
             {{mesajeResultado}}
             <div contenedor-botones>
@@ -44,7 +44,6 @@
                 <button class="btn" [routerLink]="['/home']">Volver al Home</button>
             </div>
             <div class="vidas-container">
-                <!-- <img *ngFor="let vida of vidas" [src]="['../../../assets/icons/sin-vida.png']" alt="corazones de vida" class="icono-vida"> -->
                 <img *ngFor="let vida of vidas" [src]="vida ? '../../../assets/icons/vida.png' : '../../../assets/icons/sin-vida.png'" alt="corazones de vida" class="icono-vida">
             </div>
         </div>

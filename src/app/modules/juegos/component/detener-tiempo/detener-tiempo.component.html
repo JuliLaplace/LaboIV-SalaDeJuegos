@@ -1,26 +1,31 @@
-
 <div class="contenedor">
     <h1>DETENER EL TIEMPO</h1>
     <div class="contenedor-juego">
-
+        <h3>Tiempo objetivo: {{tiempoObjetivo}} </h3>
         <div class="contenedor-juego-on" *ngIf="!juegoFinalizado">
-            <h3>¿?. </h3>
+            <div class="contenedor-cronometro">
+                <div *ngIf="usuarioJugando && !juegoFinalizado" class="cronometro-img">
+ 
+                        <div class="cronometro">
+                            <div class="tiempo">
+                                <p>{{ tiempoActual.toFixed(1) }}  segundos</p> 
+                            </div>
+                        </div>
 
-            <div class="contenedor-personaje">
-                
-                <div *ngIf="!juegoFinalizado">
-                    <img [src]="personajeParaAdivinar?.image" alt="Personaje de Serie Rick And Morty">
                 </div>
-              
+                <div *ngIf="!usuarioJugando">
+                    <button class="btn" (click)="iniciarJuego()">Iniciar Juego</button>
+                </div>
             </div>
 
     
-            <h5 *ngIf="!juegoFinalizado">¿Podrás reconocer a este personaje?</h5>
-            <div class="contenedor-botones">
+            <h5>¿Podrás detener el cronometro?</h5>
+
+            <div class="contenedor-botones" *ngIf="usuarioJugando">
                 <button class="btn" (click)="detener()">DETENER</button>
             </div>
-            <div class="contenedor-datos" *ngIf="!juegoFinalizado">
-                <div [ngClass]="mostrarResultado ? 'visible' : 'hidden'">
+            <div class="contenedor-datos" *ngIf="usuarioJugando">
+                <div *ngIf="mostrarResultado" class="resultado">
                     <p>{{mensajeResultado}}</p>
                 </div>
                 <div class="vidas-container">
@@ -30,20 +35,26 @@
             <div>
                 <p>Score: {{score}}</p>
             </div>
-            
         </div>
 
-
-        <!-- <div *ngIf="juegoFinalizado" class="mensaje-perdiste">
+        <div *ngIf="juegoFinalizado" class="mensaje-perdiste">
             <h5>Perdiste</h5>
-            <img src="../../../../../assets/gif/rick-game.gif" alt="">
+            <img class="game-over" src="../../../../../assets/gif/GameoverSMB.png" alt="Gif al perder">
             <p>Score total: {{score}}</p>
-            {{mensajeResultado}}
-            <div contenedor-botones>
+            <p>{{mensajeResultado}}</p>
+            <div class="contenedor-botones">
                 <button class="btn" (click)="reiniciarJuego()">Volver a jugar</button>
                 <button class="btn" [routerLink]="['/home']">Volver al Home</button>
             </div>
-        </div> -->
-    </div>
+        </div>
 
+        <div *ngIf="!usuarioJugando && mostrarReglas" class="mensaje-perdiste">
+            <h5>REGLAS DEL JUEGO</h5>
+            <img class="gif" src="../../../../../assets/gif/lisa.gif" alt="Gif Inicio partida - lisa con cronometro">
+            <p class="reglas">En el juego "Detener el Tiempo", el tiempo objetivo inicia en 5 segundos y aumenta 5 segundos en cada ronda. Comienzas con 3 vidas. Si te pasas del tiempo objetivo por más de 1 segundo, perderás una vida. Ganarás 5 puntos por detener el tiempo exactamente, 2 puntos si la diferencia es menor a 0.5 segundos, y 1 punto si es menor a 1 segundo.</p>
+            <div class="contenedor-boton">
+                <button class="btn" (click)="ocultarReglas()">¡Quiero Jugar!</button>
+            </div>
+        </div>
+    </div>
 </div>
