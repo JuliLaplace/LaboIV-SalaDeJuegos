@@ -31,7 +31,7 @@
                     <p class="card-text">La trivia de preguntas es un juego en el que los jugadores responden preguntas
                         relacionadas exclusivamente con la serie de televisión Rick and Morty. Cada respuesta correcta otorga
                         puntos, mientras que las respuestas incorrectas no suman.</p>
-                    <button  class="btn">JUGAR</button>
+                    <button  class="btn" [routerLink]="['/juegos/preguntados']">JUGAR</button>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                     <p class="card-text">Este juego de precisión en donde el jugador debe parar
                         un cronómetro exactamente en un tiempo objetivo. Si logra detener el cronómetro en el tiempo preciso, suma 3
                         puntos. Si falla, ya sea por detenerse antes o después del tiempo exacto, pierde la partida.</p>
-                    <button class="btn">JUGAR</button>
+                    <button class="btn" [routerLink]="['/juegos/detener-tiempo']">JUGAR</button>
                 </div>
             </div>
         </div>

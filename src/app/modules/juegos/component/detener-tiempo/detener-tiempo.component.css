@@ -1,0 +1,96 @@
+.contenedor-juego{
+    display: flex;
+    flex-direction: column;
+    background-color: #343B55;
+    width: 50%;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.contenedor-juego-on{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+.contenedor-datos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+h3, h5{
+    color: aliceblue;
+    margin: 10px;
+    text-align: center;
+}
+p{
+    color: aliceblue;
+}
+.contenedor-botones{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+}
+.fila-botones{
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    flex-wrap: nowrap;
+}
+.btn{
+    color: #343B55;
+    background: #FFC2F8; 
+    flex-grow: 0.5;
+    font-weight: bold;
+    margin:10px 10px;
+    
+}
+
+.btn:hover{
+    background: #f89bed;
+    color: #343B55;
+    
+}
+
+.icono-vida{
+    height: 50px;
+}
+
+.mensaje-perdiste{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #84f3fb;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 70%;
+
+    p, h5{
+        color: #343B55; 
+        font-weight: bold;
+    }
+}
+
+.hidden {
+    visibility: hidden; 
+
+}
+.visible {
+    visibility: visible; 
+
+}

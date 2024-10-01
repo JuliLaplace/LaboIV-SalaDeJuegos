@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { LoggerService } from './servicios/logger.service';
-import { NavbarJuegosComponent } from './componentes/navbar-juegos/navbar-juegos.component';
+
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent,NavbarJuegosComponent, CommonModule],
+  imports: [RouterOutlet, NavbarComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

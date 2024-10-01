@@ -1,0 +1,49 @@
+
+<div class="contenedor">
+    <h1>DETENER EL TIEMPO</h1>
+    <div class="contenedor-juego">
+
+        <div class="contenedor-juego-on" *ngIf="!juegoFinalizado">
+            <h3>¿?. </h3>
+
+            <div class="contenedor-personaje">
+                
+                <div *ngIf="!juegoFinalizado">
+                    <img [src]="personajeParaAdivinar?.image" alt="Personaje de Serie Rick And Morty">
+                </div>
+              
+            </div>
+
+    
+            <h5 *ngIf="!juegoFinalizado">¿Podrás reconocer a este personaje?</h5>
+            <div class="contenedor-botones">
+                <button class="btn" (click)="detener()">DETENER</button>
+            </div>
+            <div class="contenedor-datos" *ngIf="!juegoFinalizado">
+                <div [ngClass]="mostrarResultado ? 'visible' : 'hidden'">
+                    <p>{{mensajeResultado}}</p>
+                </div>
+                <div class="vidas-container">
+                    <img *ngFor="let vida of vidas" [src]="vida ? '../../../assets/icons/vida.png' : '../../../assets/icons/sin-vida.png'" alt="corazones de vida" class="icono-vida">
+                </div>
+            </div>
+            <div>
+                <p>Score: {{score}}</p>
+            </div>
+            
+        </div>
+
+
+        <!-- <div *ngIf="juegoFinalizado" class="mensaje-perdiste">
+            <h5>Perdiste</h5>
+            <img src="../../../../../assets/gif/rick-game.gif" alt="">
+            <p>Score total: {{score}}</p>
+            {{mensajeResultado}}
+            <div contenedor-botones>
+                <button class="btn" (click)="reiniciarJuego()">Volver a jugar</button>
+                <button class="btn" [routerLink]="['/home']">Volver al Home</button>
+            </div>
+        </div> -->
+    </div>
+
+</div>

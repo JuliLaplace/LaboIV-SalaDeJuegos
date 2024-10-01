@@ -100,7 +100,7 @@ export class MayorMenorComponent {
   obtenerValorCartaEnNumero(valor: string): number {
     switch (valor) {
       case 'ACE':
-        return 14;
+        return 1;
       case 'KING':
         return 13;
       case 'QUEEN':

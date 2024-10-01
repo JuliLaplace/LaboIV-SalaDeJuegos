@@ -42,20 +42,25 @@ export class AhorcadoComponent {
 
   letraSeleccionadaBotonera(letra: string) {
     this.resultado=true;
+
     if(this.vidasUsuario>0){
       this.letrasYaUsadas.push(letra);
       if(this.palabraParaAdivinar.includes(letra)){
         this.mesajeResultado="¡Correcto!"
         this.score +=1;
         this.letrasAcertadas.push(letra);
+
+       this.verificarUsuarioGano();
+
       }else{
         this.mesajeResultado="¡Fallaste!"
         this.perderVida();
       }
     }
+
     if (this.vidasUsuario === 0) {
       this.juegoFinalizado = true;
-      this.mesajeResultado="La palabra era: " + this.palabraParaAdivinar;
+      this.mesajeResultado="Perdiste. La palabra era: " + this.palabraParaAdivinar;
       
     }
   }
@@ -87,6 +92,14 @@ export class AhorcadoComponent {
     this.letrasAcertadas = [];
     this.resultado=false;
     this.iniciarJuego();
+  }
+
+  verificarUsuarioGano(){
+    if (this.letrasAcertadas.length === this.letrasPorAdivinar.length) {
+      this.juegoFinalizado = true;
+      this.mesajeResultado = "¡Felicidades, ganaste!";
+      return;
+    }
   }
 
   

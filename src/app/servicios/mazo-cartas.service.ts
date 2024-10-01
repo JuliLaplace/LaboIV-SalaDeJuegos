@@ -19,5 +19,4 @@ export class MazoCartasService {
   }
 
 
-  // mezclar cartas?
 }

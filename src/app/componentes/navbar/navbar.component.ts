@@ -42,7 +42,6 @@ export class NavbarComponent {
             confirmButtonText: "<h5 style='color:#FFC2F8; margin:0px;'> OK </h5>",
           }
           );
-          // this.router.navigate(['/login']);
         }).catch((error) => {
           Swal.fire('Error', 'Ocurrió un problema al cerrar sesión.', 'error');
         });

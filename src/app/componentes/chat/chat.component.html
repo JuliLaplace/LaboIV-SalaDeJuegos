@@ -5,14 +5,13 @@
        
                 <div *ngFor="let m of obtenerMensajes()" [ngClass]="m.user == sesion.getUsuario() ? 'mensaje-chat-propio' : 'mensaje-chat'">
                     <p class="hora-mensaje">{{(m.fecha.seconds * 1000) | date:'dd-MM-yy HH:mm'}}</p>
-                    <p class="mensaje">{{m.user}} : {{m.mensaje}}</p>
+                    <p class="mensaje">{{m.user == sesion.getUsuario() ? 'Yo' : m.user}} : {{m.mensaje}}</p>
                 </div>
          
         </div>
         <div class="input">
             <input type="text" [(ngModel)]="mensaje" name="mensaje">
             <button class="btn-chat" (click)="enviarMensaje()">Enviar</button>
-
         </div>
     </div>
 </div>

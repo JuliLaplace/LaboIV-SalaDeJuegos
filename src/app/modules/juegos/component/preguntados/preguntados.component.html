@@ -1,0 +1,56 @@
+
+<div class="contenedor">
+    <h1>PREGUNTADOS</h1>
+    <div class="contenedor-juego">
+
+        <div class="contenedor-juego-on" *ngIf="!juegoFinalizado">
+            <h3>Bienvenido a la dimension C-137. </h3>
+
+            <div class="contenedor-personaje">
+                
+                <div>
+                    <img [src]="personajeParaAdivinar?.image" alt="Personaje de Serie Rick And Morty">
+                </div>
+              
+            </div>
+
+    
+            <h5>¿Podrás reconocer a este personaje?</h5>
+            <div class="contenedor-botones">
+                <div class="fila-botones">
+                    <button class="btn" (click)="adivinar(personajes[0].name)">{{personajes[0].name}}</button>
+                    <button class="btn" (click)="adivinar(personajes[1].name)">{{personajes[1].name}}</button>
+                </div>
+                <div class="fila-botones">
+                    <button class="btn" (click)="adivinar(personajes[2].name)">{{personajes[2].name}}</button>
+                    <button class="btn" (click)="adivinar(personajes[3].name)">{{personajes[3].name}}</button>
+                </div>
+            </div>
+            <div class="contenedor-datos">
+                <div [ngClass]="mostrarResultado ? 'visible' : 'hidden'">
+                    <p>{{mensajeResultado}}</p>
+                </div>
+                <div class="vidas-container">
+                    <img *ngFor="let vida of vidas" [src]="vida ? '../../../assets/icons/vida.png' : '../../../assets/icons/sin-vida.png'" alt="corazones de vida" class="icono-vida">
+                </div>
+            </div>
+            <div>
+                <p>Score: {{score}}</p>
+            </div>
+            
+        </div>
+
+
+        <div *ngIf="juegoFinalizado" class="mensaje-perdiste">
+            <h5>Perdiste</h5>
+            <img src="../../../../../assets/gif/rick-game.gif" alt="">
+            <p>Score total: {{score}}</p>
+            {{mensajeResultado}}
+            <div contenedor-botones>
+                <button class="btn" (click)="reiniciarJuego()">Volver a jugar</button>
+                <button class="btn" [routerLink]="['/home']">Volver al Home</button>
+            </div>
+        </div>
+    </div>
+
+</div>
