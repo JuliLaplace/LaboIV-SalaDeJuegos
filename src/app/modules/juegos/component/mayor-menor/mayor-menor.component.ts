@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MazoCartasService } from '../../../../servicios/mazo-cartas.service';
+import { ResultadosService } from '../../../../servicios/resultados.service';
 
 @Component({
   selector: 'app-mayor-menor',
@@ -21,7 +22,7 @@ export class MayorMenorComponent {
 
   score: number = 0;
 
-  constructor(private servicioMazo: MazoCartasService) {
+  constructor(private servicioMazo: MazoCartasService, private servicioResultado : ResultadosService) {
   }
 
   ngOnInit(): void {
@@ -86,6 +87,7 @@ export class MayorMenorComponent {
 
       this.juegoFinalizado = true;
       this.mesajeResultado = '¡Te quedaste sin vidas!';
+      this.servicioResultado.crearRegistro(this.score, "Mayor-Menor");
       return;
     } else {
 

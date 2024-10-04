@@ -17,7 +17,7 @@ import { DetenerTiempoComponent } from './component/detener-tiempo/detener-tiemp
   ],
   imports: [
     CommonModule,
-    JuegosRoutingModule
+    JuegosRoutingModule, 
   ]
 })
 export class JuegosModule { }

@@ -16,6 +16,12 @@
                 <li class="nav-item nav-underline" *ngIf="this.sesion.sesionActiva()">
                     <a class="nav-link" [routerLink]="['chat']">Chat</a>
                 </li>
+                <li class="nav-item nav-underline" *ngIf="this.sesion.sesionActiva()">
+                    <a class="nav-link" [routerLink]="['resultados']">Resultados</a>
+                </li>
+                <li class="nav-item nav-underline" *ngIf="this.sesion.sesionActiva()">
+                    <a class="nav-link" [routerLink]="['encuesta']">Encuesta</a>
+                </li>
                 <li class="nav-item nav-underline" *ngIf="!this.sesion.sesionActiva()">
                     <a class="nav-link" [routerLink]="['login']">Inicie Sesión</a>
                 </li>

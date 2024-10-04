@@ -23,6 +23,9 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    p{
+        margin: 10px;
+    }
 }
 
 .palabra-oculta p {
@@ -65,14 +68,29 @@ h3, p{
 img{
     border-radius: 10px;
 }
+.contenedor-palabra-botones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.botonera{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
 .btn{
     color: #343B55;
     background: #FFC2F8; 
     align-self: center; 
     font-weight: bold;
     margin:0px 10px;
-    
 }
+
 
 .btn:hover{
     background: #f89bed;
@@ -85,4 +103,8 @@ img{
 }
 .visible {
     visibility: visible; 
+}
+
+.vidas-container{
+    margin-top: 10px;
 }

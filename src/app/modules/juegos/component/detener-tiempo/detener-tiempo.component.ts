@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ResultadosService } from '../../../../servicios/resultados.service';
 
 @Component({
   selector: 'app-detener-tiempo',
@@ -22,7 +23,7 @@ export class DetenerTiempoComponent {
   mostrarReglas: boolean = true;
 
 
-  constructor() {
+  constructor(private servicioResultado : ResultadosService) {
   }
 
   iniciarJuego() {
@@ -69,6 +70,7 @@ export class DetenerTiempoComponent {
     if (this.vidasUsuario === 0) {
       this.juegoFinalizado = true;
       this.mensajeResultado = '¡Te quedaste sin vidas!';
+      this.servicioResultado.crearRegistro(this.score, "Detener-Tiempo");
       clearInterval(this.intervalo); // se detiene el cronometro
       return;
     } 

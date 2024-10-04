@@ -18,12 +18,12 @@
             <h5>¿Podrás reconocer a este personaje?</h5>
             <div class="contenedor-botones">
                 <div class="fila-botones">
-                    <button class="btn" (click)="adivinar(personajes[0].name)">{{personajes[0].name}}</button>
-                    <button class="btn" (click)="adivinar(personajes[1].name)">{{personajes[1].name}}</button>
+                    <button class="btn" (click)="adivinar(personajes[0]?.name)">{{personajes[0]?.name}}</button>
+                    <button class="btn" (click)="adivinar(personajes[1]?.name)">{{personajes[1]?.name}}</button>
                 </div>
                 <div class="fila-botones">
-                    <button class="btn" (click)="adivinar(personajes[2].name)">{{personajes[2].name}}</button>
-                    <button class="btn" (click)="adivinar(personajes[3].name)">{{personajes[3].name}}</button>
+                    <button class="btn" (click)="adivinar(personajes[2]?.name)">{{personajes[2]?.name}}</button>
+                    <button class="btn" (click)="adivinar(personajes[3]?.name)">{{personajes[3]?.name}}</button>
                 </div>
             </div>
             <div class="contenedor-datos">

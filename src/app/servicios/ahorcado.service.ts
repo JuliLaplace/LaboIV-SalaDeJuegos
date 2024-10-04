@@ -8,7 +8,7 @@ export class AhorcadoService {
   constructor() { }
 
   
-  palabras: string[] = ['LEON', 'TIGRE', 'DELFIN', 'CANGURO', 'GATO', 'OVEJA', 'PAVO', 'PATO', 'CISNE', 'MURCIELAGO', 'BUFALO', 'HORMIGA', 'TIBURON', 'MEDUSA', 'RIO', 'OCEANO', 'LAGO', 'BOSQUE', 'ISLA', 'VOLCAN', 'CUEVA', 'PIEDRA', 'ROCA', 'VIENTO', 'FUEGO', 'HIELO', 'GRANIZO', 'PIZZA', 'PAN', 'QUESO', 'HUEVO', 'CARNE', 'PESCADO', 'UVA', 'FRESA', 'MANGO', 'PIÑA', 'LIMON', 'MELON', 'TOMATE', 'LECHUGA'];
+  palabras: string[] = ['PARED','VASO','PLATO','TIJERA','PANEL','LEON', 'TIGRE', 'DELFIN', 'CANGURO', 'GATO', 'OVEJA', 'PAVO', 'PATO', 'CISNE', 'MURCIELAGO', 'BUFALO', 'HORMIGA', 'TIBURON', 'MEDUSA', 'RIO', 'LAGO', 'BOSQUE', 'ISLA', 'VOLCAN', 'CUEVA', 'PIEDRA', 'ROCA', 'VIENTO', 'FUEGO', 'HIELO', 'GRANIZO', 'PAN', 'QUESO', 'HUEVO', 'CARNE', 'PESCADO', 'UVA', 'FRESA', 'MANGO', 'PIÑA', 'LIMON', 'MELON', 'VINO', 'LECHUGA'];
   letras: string[] = [
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 
     'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'

@@ -1,0 +1,57 @@
+
+.seleccion{
+    margin: 20px;
+}
+
+.color-div{
+    width: 55%;
+    padding: 10px;
+    background-color: #343B55;
+    border-radius: 20px;
+    margin: 0px;
+}
+.btn{
+    background: #FFC2F8; 
+    color: #343B55;
+    /* color: #ffffff; */
+    /* background-color: #343B55; */
+    align-self: center; 
+    font-weight: bold;
+    
+}
+
+.btn:hover{
+    background: #d38bca; 
+    color: #343B55;
+}
+.btn:focus{
+    background: #d38bca; 
+    color: #343B55;
+}
+.table {
+    border: 3px solid #343B55;
+    border-radius: 15px; 
+    overflow: hidden; 
+    border-collapse: separate;
+}
+
+table th{
+    background-color: #FFC2F8;
+}
+
+table.table-bordered td,
+table.table-bordered th {
+    border-right: none; 
+    border-left: none;
+}
+
+table.table-bordered tr td {
+    border-bottom: 1px solid #343B55; 
+}
+
+table.table-bordered tr th {
+    border-bottom: 1px solid #343B55; 
+}
+table{
+    background-color: aliceblue;
+}

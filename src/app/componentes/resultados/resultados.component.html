@@ -1,0 +1,39 @@
+<div class="contenedor">
+    <h1>MEJORES RESULTADOS</h1>
+    <div class="seleccion">
+        <h2>Seleccione el juego donde quiere ver los mejores puntajes</h2>
+    </div>
+    <div class="d-flex justify-content-center mb-4 color-div">
+        <button class="btn  mx-2" (click)="seleccionarJuego('Ahorcado')">Ahorcado</button>
+        <button class="btn  mx-2" (click)="seleccionarJuego('Mayor-Menor')">Mayor o Menor</button>
+        <button class="btn  mx-2" (click)="seleccionarJuego('Detener-Tiempo')">Detener el Tiempo</button>
+        <button class="btn  mx-2" (click)="seleccionarJuego('Preguntados')">Preguntados</button>
+      </div>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center"> 
+                <div *ngIf=" this.servicioResultado.coleccionResultados.length > 0">
+                    <table class="table table-bordered table-striped text-center table-responsive">
+                        <thead>
+                            <tr>
+                                <th scope="col">Puesto</th>
+                                <th scope="col">Score</th>
+                                <th scope="col">Usuario</th>
+                                <th scope="col">Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let login of this.servicioResultado.coleccionResultados; let i = index">
+                                <td scope="row">{{ i + 1 }}°</td>
+                                <td>{{ login.score}}</td>
+                                <td>{{ login.user}}</td>
+                                <td>{{ (login.fecha.seconds * 1000) | date:'dd-MM-yy HH:mm' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

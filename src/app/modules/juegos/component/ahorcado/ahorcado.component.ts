@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AhorcadoService } from '../../../../servicios/ahorcado.service';
+import { ResultadosService } from '../../../../servicios/resultados.service';
 
 @Component({
   selector: 'app-ahorcado',
@@ -20,7 +21,7 @@ export class AhorcadoComponent {
 
   score : number = 0;
 
-  constructor( public ahorcado: AhorcadoService) {}
+  constructor( public ahorcado: AhorcadoService, private servicioResultado: ResultadosService) {}
 
   ngOnInit(): void {
     this.iniciarJuego();
@@ -61,6 +62,7 @@ export class AhorcadoComponent {
     if (this.vidasUsuario === 0) {
       this.juegoFinalizado = true;
       this.mesajeResultado="Perdiste. La palabra era: " + this.palabraParaAdivinar;
+      this.servicioResultado.crearRegistro(this.score, "Ahorcado");
       
     }
   }
@@ -98,6 +100,7 @@ export class AhorcadoComponent {
     if (this.letrasAcertadas.length === this.letrasPorAdivinar.length) {
       this.juegoFinalizado = true;
       this.mesajeResultado = "¡Felicidades, ganaste!";
+      this.servicioResultado.crearRegistro(this.score, "Ahorcado");
       return;
     }
   }

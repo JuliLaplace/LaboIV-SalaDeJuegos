@@ -7,16 +7,19 @@
                 <!-- <img src="../../../assets/img/horca.png" alt=""> -->
                 <img [src]="'../../../assets/img/horca-' + (7 - vidasUsuario) + '.png'" alt="horca">
             </div>
-            
+
             <!-- <p *ngFor="let letra of letrasPorAdivinar">{{letrasAcertadas.includes(letra) ? letra : '_'}}</p> -->
 
-        
-        <div class="botonera" *ngIf="!juegoFinalizado">
+
+            <div class="contenedor-palabra-botones" *ngIf="!juegoFinalizado">
                 <h3>Palabra a adivinar:</h3>
                 <div class="palabra-oculta">
                     <p *ngFor="let letra of letrasPorAdivinar">{{mostrarLetra(letra)}}</p>
                 </div>
-                <button *ngFor="let letra of ahorcado.letras" (click)="letraSeleccionadaBotonera(letra)" [disabled]="letraUsada(letra)">{{letra}}</button>
+                <div class="botonera">
+                    <button class="btn" *ngFor="let letra of ahorcado.letras" (click)="letraSeleccionadaBotonera(letra)"
+                        [disabled]="letraUsada(letra)">{{letra}}</button>
+                </div>
             </div>
 
             <div class="contenedor-datos" *ngIf="!juegoFinalizado">
@@ -24,9 +27,11 @@
                     <p>Score: {{score}}</p>
                 </div>
                 <div class="vidas-container">
-                    <img *ngFor="let vida of vidas" [src]="vida ? '../../../assets/icons/vida.png' : '../../../assets/icons/sin-vida.png'" alt="corazones de vida" class="icono-vida">
+                    <img *ngFor="let vida of vidas"
+                        [src]="vida ? '../../../assets/icons/vida.png' : '../../../assets/icons/sin-vida.png'"
+                        alt="corazones de vida" class="icono-vida">
                 </div>
-               
+
                 <div [ngClass]="resultado ? 'visible' : 'hidden'">
                     <p>{{mesajeResultado}}</p>
                 </div>
@@ -36,7 +41,8 @@
 
 
         <div *ngIf="juegoFinalizado" class="mensaje-perdiste">
-            <img  [src]="vidasUsuario>0 ? '../../../assets/gif/vivo.gif' : '../../../../../assets/img/horca-7.png' " alt="imagen ahorcado">
+            <img [src]="vidasUsuario>0 ? '../../../assets/gif/vivo.gif' : '../../../../../assets/img/horca-7.png' "
+                alt="imagen ahorcado">
             <p>Score total: {{score}}</p>
             {{mesajeResultado}}
             <div contenedor-botones>
@@ -44,7 +50,9 @@
                 <button class="btn" [routerLink]="['/home']">Volver al Home</button>
             </div>
             <div class="vidas-container">
-                <img *ngFor="let vida of vidas" [src]="vida ? '../../../assets/icons/vida.png' : '../../../assets/icons/sin-vida.png'" alt="corazones de vida" class="icono-vida">
+                <img *ngFor="let vida of vidas"
+                    [src]="vida ? '../../../assets/icons/vida.png' : '../../../assets/icons/sin-vida.png'"
+                    alt="corazones de vida" class="icono-vida">
             </div>
         </div>
     </div>

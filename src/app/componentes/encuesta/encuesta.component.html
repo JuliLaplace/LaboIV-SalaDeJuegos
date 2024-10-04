@@ -1,0 +1,51 @@
+<div class="contenedor" *ngIf="this.sesion.sesionActiva()">
+  <div class="encuesta">
+    <h1>ENCUESTA</h1>
+    <form class="login-form" action="#">
+
+      <label>
+        <input type="text" [(ngModel)]="nombreIngresado" name="nombre" required placeholder="Nombre">
+      </label>
+
+      <label>
+        <input type="text" [(ngModel)]="apellidoIngresado" name="apellido" required placeholder="Apellido">
+      </label>
+
+      <label>
+        <input type="number" [(ngModel)]="edadIngresada" name="edad" required placeholder="Edad">
+      </label>
+
+      <label>
+        <input type="number" [(ngModel)]="telefonoIngresado" name="telefono" required placeholder="telefono">
+      </label>
+
+      <label>
+        <textarea [(ngModel)]="mensajeIngresado" name="mensajeIngresado" required placeholder="Deje su mensaje aqui" rows="10" cols="30"></textarea>
+      </label>
+
+      <legend>¿Cuál fué tu juego favorito?</legend>
+      <div>
+        <input type="radio" id="preguntados" name="preguntados" value="preguntados" [(ngModel)]="juegoFavoritoSeleccionado" />
+        <label for="preguntados">Preguntados: Rick and Morty</label>
+
+        <input type="radio" id="mayor-menor" name="mayor-menor" value="mayor-menor" [(ngModel)]="juegoFavoritoSeleccionado" />
+        <label for="mayor-menor">Mayor o Menor</label>
+
+        <input type="radio" id="ahorcado" name="ahorcado" value="ahorcado" [(ngModel)]="juegoFavoritoSeleccionado" />
+        <label for="ahorcado">Ahorcado</label>
+
+        <input type="radio" id="detener-tiempo" name="detener-tiempo" value="detener-tiempo" [(ngModel)]="juegoFavoritoSeleccionado" />
+        <label for="detener-tiempo">Detener el tiempo</label>
+      </div>
+
+      <label>
+        <input type="range" min="1" max="10" [(ngModel)]="nivelSatisfaccion"/>
+      </label>
+
+      <label>
+        <input type="submit" value="Enviar" (click)="enviarEncuesta()">
+      </label>
+    </form>
+
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PreguntadosPersonajesService } from '../../../../servicios/rick-morty-api.service';
+import { ResultadosService } from '../../../../servicios/resultados.service';
 
 @Component({
   selector: 'app-preguntados',
@@ -24,14 +25,13 @@ export class PreguntadosComponent {
   
 
 
-  constructor(private servicioPreguntas: PreguntadosPersonajesService) {
+  constructor(private servicioPreguntas: PreguntadosPersonajesService, private servicioResultado : ResultadosService) {
   }
 
   ngOnInit(): void {
     this.servicioPreguntas.obtenerPersonajes(this.generarNumerosRandom(this.personajesUsados)).subscribe(respuesta =>{
       this.personajes = respuesta;
       this.personajeParaAdivinar = this.elegirNumeroRandom(this.personajes);
-      console.log(this.personajes)
     });
 
     
@@ -40,9 +40,9 @@ export class PreguntadosComponent {
     const numeros: number[] = [];
     while (numeros.length < 4) {
       const randomNum = Math.floor(Math.random() * (826 - 1 + 1)) + 1;
-  
       if (!numeros.includes(randomNum) && !idUsados.includes(randomNum)) {
         numeros.push(randomNum);
+        
       }
     }
     
@@ -56,15 +56,14 @@ export class PreguntadosComponent {
  
 
 
-  iniciarJuego() {
-   }
+
 
   adivinar(opcionElegida:string) {
 
     if (this.juegoFinalizado) {
       return; //aca voy a tener que mostrar que perdió
     }
-
+    this.personajesUsados.push(this.personajeParaAdivinar.id);
     if (opcionElegida === this.personajeParaAdivinar.name) {
       this.mensajeResultado = '¡Correcto!';
       this.score += 1;
@@ -81,13 +80,13 @@ export class PreguntadosComponent {
     if (this.vidasUsuario === 0) {
       this.juegoFinalizado = true;
       this.mensajeResultado = '¡Te quedaste sin vidas!';
+      this.servicioResultado.crearRegistro(this.score, "Preguntados");
       return;
     } else {
       
       this.servicioPreguntas.obtenerPersonajes(this.generarNumerosRandom(this.personajesUsados)).subscribe(respuesta =>{
         this.personajes = respuesta;
         this.personajeParaAdivinar = this.elegirNumeroRandom(this.personajes);
-        console.log(this.personajes)
         
       });
     }

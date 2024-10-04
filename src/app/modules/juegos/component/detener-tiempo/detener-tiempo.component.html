@@ -19,20 +19,20 @@
             </div>
 
     
-            <h5>¿Podrás detener el cronometro?</h5>
+            <h5>¿Podrás detener el cronómetro?</h5>
 
             <div class="contenedor-botones" *ngIf="usuarioJugando">
                 <button class="btn" (click)="detener()">DETENER</button>
             </div>
             <div class="contenedor-datos" *ngIf="usuarioJugando">
-                <div *ngIf="mostrarResultado" class="resultado">
+                <div [ngClass]="mostrarResultado ? 'visible' : 'hidden'">
                     <p>{{mensajeResultado}}</p>
                 </div>
                 <div class="vidas-container">
                     <img *ngFor="let vida of vidas" [src]="vida ? '../../../assets/icons/vida.png' : '../../../assets/icons/sin-vida.png'" alt="corazones de vida" class="icono-vida">
                 </div>
             </div>
-            <div>
+            <div *ngIf="usuarioJugando">
                 <p>Score: {{score}}</p>
             </div>
         </div>
