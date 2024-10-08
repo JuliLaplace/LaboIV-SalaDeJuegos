@@ -1,51 +1,99 @@
 <div class="contenedor" *ngIf="this.sesion.sesionActiva()">
+  <h1>ENCUESTA</h1>
   <div class="encuesta">
-    <h1>ENCUESTA</h1>
-    <form class="login-form" action="#">
-
-      <label>
-        <input type="text" [(ngModel)]="nombreIngresado" name="nombre" required placeholder="Nombre">
-      </label>
-
-      <label>
-        <input type="text" [(ngModel)]="apellidoIngresado" name="apellido" required placeholder="Apellido">
-      </label>
-
-      <label>
-        <input type="number" [(ngModel)]="edadIngresada" name="edad" required placeholder="Edad">
-      </label>
-
-      <label>
-        <input type="number" [(ngModel)]="telefonoIngresado" name="telefono" required placeholder="telefono">
-      </label>
-
-      <label>
-        <textarea [(ngModel)]="mensajeIngresado" name="mensajeIngresado" required placeholder="Deje su mensaje aqui" rows="10" cols="30"></textarea>
-      </label>
-
-      <legend>¿Cuál fué tu juego favorito?</legend>
-      <div>
-        <input type="radio" id="preguntados" name="preguntados" value="preguntados" [(ngModel)]="juegoFavoritoSeleccionado" />
-        <label for="preguntados">Preguntados: Rick and Morty</label>
-
-        <input type="radio" id="mayor-menor" name="mayor-menor" value="mayor-menor" [(ngModel)]="juegoFavoritoSeleccionado" />
-        <label for="mayor-menor">Mayor o Menor</label>
-
-        <input type="radio" id="ahorcado" name="ahorcado" value="ahorcado" [(ngModel)]="juegoFavoritoSeleccionado" />
-        <label for="ahorcado">Ahorcado</label>
-
-        <input type="radio" id="detener-tiempo" name="detener-tiempo" value="detener-tiempo" [(ngModel)]="juegoFavoritoSeleccionado" />
-        <label for="detener-tiempo">Detener el tiempo</label>
+    <form class="login-form" [formGroup]="altaEncuesta" (ngSubmit)="cargarEncuesta()">
+      
+      <div class="contenedor-label">
+        <label>Nombre: </label>
+        <input type="text" formControlName="nombre" required placeholder="Ingrese su nombre">
+        
+        <div [ngClass]="{'visible': servicioForm.controlConError(altaEncuesta, 'nombre')}" class="error-message">
+          <p>{{servicioForm.mensajeError(altaEncuesta, 'nombre') }}</p>
+        </div>
       </div>
 
-      <label>
-        <input type="range" min="1" max="10" [(ngModel)]="nivelSatisfaccion"/>
-      </label>
+      <div class="contenedor-label">
+        <label>Apellido: </label>
+        <input type="text" formControlName="apellido" required placeholder="Ingrese su apellido">
+        <div [ngClass]="{'visible': servicioForm.controlConError(altaEncuesta, 'apellido')}" class="error-message">
+          <p>
+            {{ servicioForm.mensajeError(altaEncuesta, 'apellido') }}
+          </p>
+        </div>
+      </div>
 
-      <label>
-        <input type="submit" value="Enviar" (click)="enviarEncuesta()">
-      </label>
+      <div class="contenedor-label">
+        <label>Edad: </label>
+        <input type="number" formControlName="edad" required placeholder="Ingrese su edad">
+        <div [ngClass]="{'visible': servicioForm.controlConError(altaEncuesta, 'edad')}" class="error-message">
+          <p>{{ servicioForm.mensajeError(altaEncuesta, 'edad') }}</p>
+        </div>
+      </div>
+
+      <div class="contenedor-label">
+        <label>Telefono: </label>
+        <input type="text" formControlName="telefono" required placeholder="Ingrese su teléfono">
+        <div [ngClass]="{'visible': servicioForm.controlConError(altaEncuesta, 'telefono')}" class="error-message">
+          <p>{{ servicioForm.mensajeError(altaEncuesta, 'telefono') }}</p>
+        </div>
+      </div>
+
+      <div class="contenedor-label">
+        <label>Mensaje: </label>
+        <textarea formControlName="mensajeIngresado" required placeholder="Deje su mensaje aqui (hasta 150 caracteres)" rows="10"
+          cols="30" ></textarea>
+        <div [ngClass]="{'visible': servicioForm.controlConError(altaEncuesta, 'mensajeIngresado')}" class="error-message">
+          <p>{{ servicioForm.mensajeError(altaEncuesta, 'mensajeIngresado') }}</p>
+        </div>
+      </div>
+
+      <div class="contenedor-juego">
+       
+          <h4>¿Cuál fué tu juego favorito?</h4>
+          <div>
+            <input type="radio" id="preguntados" value="preguntados" formControlName="juegoFavoritoSeleccionado" />
+            <label for="preguntados">Preguntados: Rick and Morty</label>
+    
+            <input type="radio" id="mayor-menor" value="mayor-menor" formControlName="juegoFavoritoSeleccionado" />
+            <label for="mayor-menor">Mayor o Menor</label>
+    
+            <input type="radio" id="ahorcado" value="ahorcado" formControlName="juegoFavoritoSeleccionado" />
+            <label for="ahorcado">Ahorcado</label>
+    
+            <input type="radio" id="detener-tiempo" value="detener-tiempo" formControlName="juegoFavoritoSeleccionado" />
+            <label for="detener-tiempo">Detener el tiempo</label>
+          </div>
+     
+      </div>
+      <div class="contenedor-nivel">
+        <label>Puntaje del juego (de 0 a 100) :</label>
+        <input type="range"  min="0" max="100" value="0" formControlName="nivelDeSatisfaccion" list="tickmarks"/>
+        <datalist id="tickmarks">
+          <option value="0"></option>
+          <option value="10"></option>
+          <option value="20"></option>
+          <option value="30"></option>
+          <option value="40"></option>
+          <option value="50"></option>
+          <option value="60"></option>
+          <option value="70"></option>
+          <option value="80"></option>
+          <option value="90"></option>
+          <option value="100"></option>
+        </datalist>
+      </div>
+      
+
+      
+      <div class="contenedor-botones">
+        <button type="submit" [disabled]="!this.altaEncuesta.valid" class="btn">Enviar</button>
+        <button class="btn" (click)="limpiarDatos()">Limpiar datos</button>
+      </div>
+      <div [ngClass]="{'visible': encuestaEnviada}" class="mensaje-enviado">
+        <p>¡Encuesta enviada con éxito!</p>
+      </div>
+        
+
     </form>
-
   </div>
 </div>

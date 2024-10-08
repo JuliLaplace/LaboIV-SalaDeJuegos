@@ -11,7 +11,7 @@
             <!-- <p *ngFor="let letra of letrasPorAdivinar">{{letrasAcertadas.includes(letra) ? letra : '_'}}</p> -->
 
 
-            <div class="contenedor-palabra-botones" *ngIf="!juegoFinalizado">
+            <div class="contenedor-palabra-botones" *ngIf="!juegoFinalizado && !mostrarMensajeContinuar">
                 <h3>Palabra a adivinar:</h3>
                 <div class="palabra-oculta">
                     <p *ngFor="let letra of letrasPorAdivinar">{{mostrarLetra(letra)}}</p>
@@ -22,7 +22,7 @@
                 </div>
             </div>
 
-            <div class="contenedor-datos" *ngIf="!juegoFinalizado">
+            <div class="contenedor-datos" *ngIf="!juegoFinalizado && !mostrarMensajeContinuar">
                 <div>
                     <p>Score: {{score}}</p>
                 </div>
@@ -48,6 +48,21 @@
             <div contenedor-botones>
                 <button class="btn" (click)="reiniciarJuego()">Volver a jugar</button>
                 <button class="btn" [routerLink]="['/home']">Volver al Home</button>
+            </div>
+            <div class="vidas-container">
+                <img *ngFor="let vida of vidas"
+                    [src]="vida ? '../../../assets/icons/vida.png' : '../../../assets/icons/sin-vida.png'"
+                    alt="corazones de vida" class="icono-vida">
+            </div>
+        </div>
+
+        <div *ngIf="mostrarMensajeContinuar" class="mensaje-perdiste">
+            <img src="../../../assets/gif/vivo.gif" alt="imagen ahorcado">
+            <p>Score total: {{score}}</p>
+            {{mesajeResultado}}
+            <div contenedor-botones>
+                <button class="btn" (click)="continuarJuego()">Seguir jugando</button>
+                <button class="btn" (click)="noContinuarJuego()" [routerLink]="['/home']">No continuar juego</button>
             </div>
             <div class="vidas-container">
                 <img *ngFor="let vida of vidas"

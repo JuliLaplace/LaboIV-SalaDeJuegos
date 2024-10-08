@@ -1,0 +1,101 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.encuesta {
+    background-color: rgba(245, 207, 240, 0.836);
+    border-radius: 20px;
+    border-color: #343B55;
+    border-style: solid;
+    margin: 10px;
+    padding: 20px;
+}
+
+.contenedor-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenedor-juego{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.contenedor-nivel{
+    display: flex;
+    flex-direction: row;
+}
+
+label {
+    margin: 10px;
+    font-weight: 600;
+    
+    
+}
+input, textarea{
+    text-align: center;
+}
+
+.error-message p {
+    color: red;
+    font-weight: 900;
+    display: block;
+    height: 20px;
+}
+
+p {
+    margin: 0;
+}
+
+.error-message {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: red;
+  }
+  
+  .error-message.visible {
+    opacity: 1;
+  }
+  
+
+  .hidden {
+    visibility: hidden;
+  }
+
+
+/*botones*/
+.contenedor-botones {
+    margin: 20px;
+}
+
+.btn {
+    background: #d38bca;
+    color: #343B55;
+    align-self: center;
+    font-weight: bold;
+    margin: 10px;
+
+}
+
+.btn:hover {
+    background: #FFC2F8;
+    color: #343B55;
+}
+
+h4 {
+    text-align: center;
+}
+
+.mensaje-enviado {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: #343B55;
+    font-weight: 900;
+  }
+  
+  .mensaje-enviado.visible {
+    opacity: 1;
+  }

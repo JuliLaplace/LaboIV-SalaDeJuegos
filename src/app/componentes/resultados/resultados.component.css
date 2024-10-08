@@ -21,13 +21,16 @@
 }
 
 .btn:hover{
+    background: #daa5d2; 
+    color: #343B55;
+}
+
+.active {
     background: #d38bca; 
     color: #343B55;
 }
-.btn:focus{
-    background: #d38bca; 
-    color: #343B55;
-}
+
+
 .table {
     border: 3px solid #343B55;
     border-radius: 15px; 
@@ -55,3 +58,4 @@ table.table-bordered tr th {
 table{
     background-color: aliceblue;
 }
+

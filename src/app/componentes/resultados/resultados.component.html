@@ -1,16 +1,16 @@
 <div class="contenedor">
     <h1>MEJORES RESULTADOS</h1>
     <div class="seleccion">
-        <h2>Seleccione el juego donde quiere ver los mejores puntajes</h2>
+        <h2>Seleccione el juego para ver el TOP 10 jugadores</h2>
     </div>
     <div class="d-flex justify-content-center mb-4 color-div">
-        <button class="btn  mx-2" (click)="seleccionarJuego('Ahorcado')">Ahorcado</button>
-        <button class="btn  mx-2" (click)="seleccionarJuego('Mayor-Menor')">Mayor o Menor</button>
-        <button class="btn  mx-2" (click)="seleccionarJuego('Detener-Tiempo')">Detener el Tiempo</button>
-        <button class="btn  mx-2" (click)="seleccionarJuego('Preguntados')">Preguntados</button>
+        <button [ngClass]="{'active': juegoSeleccionado === 'Ahorcado'}" class="btn  mx-2" (click)="seleccionarJuego('Ahorcado')">Ahorcado</button>
+        <button [ngClass]="{'active': juegoSeleccionado === 'Mayor-Menor'}"  class="btn  mx-2" (click)="seleccionarJuego('Mayor-Menor')">Mayor o Menor</button>
+        <button [ngClass]="{'active': juegoSeleccionado === 'Detener-Tiempo'}"  class="btn  mx-2" (click)="seleccionarJuego('Detener-Tiempo')">Detener el Tiempo</button>
+        <button [ngClass]="{'active': juegoSeleccionado === 'Preguntados'}"  class="btn  mx-2" (click)="seleccionarJuego('Preguntados')">Preguntados</button>
       </div>
 
-    <div class="container mt-5">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 text-center"> 
                 <div *ngIf=" this.servicioResultado.coleccionResultados.length > 0">

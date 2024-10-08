@@ -21,6 +21,8 @@ export class AhorcadoComponent {
 
   score : number = 0;
 
+  mostrarMensajeContinuar: boolean = false; 
+
   constructor( public ahorcado: AhorcadoService, private servicioResultado: ResultadosService) {}
 
   ngOnInit(): void {
@@ -81,14 +83,15 @@ export class AhorcadoComponent {
       this.vidas[this.vidasUsuario] = false;
     }
   }
+  
   reiniciarVidas(){
     this.vidasUsuario = 6;
+    this.vidas = [true, true, true, true, true, true];
   }
 
   reiniciarJuego(){
     this.juegoFinalizado = false;
-    this.vidasUsuario = 6;
-    this.vidas = [true, true, true, true, true, true];
+    this.reiniciarVidas();
     this.score = 0;
     this.letrasYaUsadas = []; // Restablecer letras ya usadas
     this.letrasAcertadas = [];
@@ -98,11 +101,21 @@ export class AhorcadoComponent {
 
   verificarUsuarioGano(){
     if (this.letrasAcertadas.length === this.letrasPorAdivinar.length) {
-      this.juegoFinalizado = true;
       this.mesajeResultado = "¡Felicidades, ganaste!";
-      this.servicioResultado.crearRegistro(this.score, "Ahorcado");
-      return;
+      this.mostrarMensajeContinuar = true;
     }
+  }
+  continuarJuego() {
+    this.reiniciarVidas(); 
+    this.letrasAcertadas = []; 
+    this.letrasYaUsadas = [];
+    this.mostrarMensajeContinuar = false; 
+    this.iniciarJuego(); 
+  }
+
+  noContinuarJuego() {
+    this.mostrarMensajeContinuar = false; // Ocultar mensaje
+    this.servicioResultado.crearRegistro(this.score, "Ahorcado");
   }
 
   
