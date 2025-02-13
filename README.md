@@ -20,7 +20,7 @@ Mini Games Arena es una aplicación web que permite a los usuarios jugar distint
 - **Metodologías:** Arquitectura modular con Lazy Loading
 
 - ## 🌐 Link  
-Accede a la aplicación aquí: [Sala de Juegos](https://mini-games-arena.web.app/)
+Accede a la aplicación aquí: [Mini Games Arena Web](https://mini-games-arena.web.app/)
 
 
 ## 📆 Instalación y Configuración
