@@ -54,5 +54,9 @@ ng serve -o
 ![Image](https://github.com/user-attachments/assets/46bafb58-678c-46de-875e-c48eac9135d0)
 
 ![Image](https://github.com/user-attachments/assets/4f3dd67c-00f9-4308-993b-0ebbcfeee8dc)
+
+![Image](https://github.com/user-attachments/assets/ed1c7a2b-086d-444c-acf5-47c8d8c40b7f)
+
+
 ---
 💻 **Desarrollado por:** Julieta Laplace
