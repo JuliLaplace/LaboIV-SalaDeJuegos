@@ -1,27 +1,44 @@
-# MiniGames
+# 🎮 Sala de Juegos -  Mini Games Arena
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
+## 📖 Descripción
+Mini Games Arena es una aplicación web que permite a los usuarios jugar distintos juegos y medir su desempeño mediante registros y estadísticas. 
 
-## Development server
+## 🚀 Características Principales
+- ✅ Registro e inicio de sesión con autenticación Firebase.
+- ✅ Juegos incluidos:
+  - Ahorcado (selección de letras mediante botones).
+  - Mayor o Menor (predicción de cartas de un mazo).
+  - Preguntados especial Rick and Morty (preguntas con imágenes de una API externa).
+  - Detener el tiempo (Juego personalizado desarrollado por el usuario).
+- ✅ Almacenamiento de datos de usuarios y puntajes.
+- ✅ Chat integrado para usuarios logueados.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🛠 Tecnologías Utilizadas
+- **Frontend:** Angular, Angular Material / Bootstrap
+- **Backend y Base de Datos:** Firebase (Authentication, Firestore)
+- **Lenguajes:** TypeScript
+- **Metodologías:** Arquitectura modular con Lazy Loading
 
-## Code scaffolding
+- ## 🌐 Link  
+Accede a la aplicación aquí: [Sala de Juegos](https://mini-games-arena.web.app/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## 📆 Instalación y Configuración
+Para ejecutar el proyecto en local:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+# Clonar el repositorio
+git clone https://github.com/JuliLaplace/LaboIV-SalaDeJuegos
 
-## Running unit tests
+# Instalar dependencias
+npm install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Iniciar el servidor
+ng serve -o
+```
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🎨 Imagenes
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+💻 **Desarrollado por:** Julieta Laplace
