@@ -38,7 +38,7 @@ ng serve -o
 ```
 
 
-## 🎨 Imagenes
+## 🎨 Imágenes
 ![Image](https://github.com/user-attachments/assets/0bf2ef5c-04ea-4f59-a9d3-f8852c9dd06a)
 
 ![Image](https://github.com/user-attachments/assets/799b2fdc-1bf5-4183-9471-634bbc06f31c)
